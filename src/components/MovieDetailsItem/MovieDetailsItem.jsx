@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
 import css from './MovieDetailsItem.module.css';
+import { Link } from "react-router-dom";
 
 export default function MoviesDetailsItem({movie}) {
-const {poster_path, title, release_date, vote_average, overview, genres} = movie;
- const movieGenres = genres.map(genre => genre.name).join(', ');
+  const {poster_path, title, release_date, vote_average, overview, genres, id} = movie;
+  const movieGenres = genres.map(genre => genre.name).join(', ');
+
+  const url_cast = `/movies/${id}/cast`;
+  const url_reviews = `/movies/${id}/reviews`;
+
   return (
     <div>
       <div className={css.container}>
@@ -23,6 +28,16 @@ const {poster_path, title, release_date, vote_average, overview, genres} = movie
         </div>
         </div>
       </div>
+      <span>Additional information</span>
+      <ul>
+          <li><Link to={url_cast}>Cast</Link></li>
+          <li><Link to={url_reviews}>Reviews</Link></li>
+      </ul>
     </div>
   )
+};
+
+
+MoviesDetailsItem.propType = {
+  movie: PropTypes.object.isRequired,
 };

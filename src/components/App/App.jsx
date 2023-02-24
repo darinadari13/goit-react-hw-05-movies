@@ -1,5 +1,6 @@
 import HomePage from 'pages/Homepage/Homepage';
 import MovieDetails from 'pages/MovieDetails/MovieDetails';
+import CastPage from 'pages/CastPage/CastPage'
 import { NavLink, Route, Routes, Outlet } from 'react-router-dom';
 
 import css from './App.module.css'
@@ -23,7 +24,7 @@ export default function App () {
       <Route path="/" element={<HomePage/>}/>
       <Route path="movies" element={<div>Movies</div>}/>
       <Route path="movies/:movieId" element={<MovieDetails/>}>
-        <Route path="cast" element={<div>Cast</div>} />
+        <Route path="cast" element={<CastPage/>} />
         <Route path="reviews" element={<div>Reviews</div>} />
       </Route>
       <Route path="*" element={<div>Page not found </div>} />
