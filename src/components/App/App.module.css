@@ -1,0 +1,27 @@
+.appContainer {
+  display: grid;
+  row-gap: 15px;
+  
+}
+.header {
+  border-bottom: 2px solid grey;
+}
+
+.navLink {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all .3s;
+  color: black;
+  padding: 20px;
+}
+.navLinkActive  {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all .3s;
+  color: rgb(237, 138, 155);
+  padding: 20px;  
+}
