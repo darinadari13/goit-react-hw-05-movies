@@ -13,7 +13,7 @@ export default function MoviesList({ movies }) {
   );
 };
 
-MoviesList.propType = {
+MoviesList.propTypes = {
   movies: PropTypes.array.isRequired,
 };
 

@@ -8,6 +8,6 @@ export default function MoviesListItem({ movie }) {
   return <li key={movie.id}><Link to={url}>{movie.title}</Link></li>;
 };
 
-MoviesListItem.propType = {
+MoviesListItem.propTypes = {
   movie: PropTypes.object.isRequired,
 };

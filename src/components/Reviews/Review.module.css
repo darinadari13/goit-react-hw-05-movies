@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.author {
+  font-weight: 600;
+}

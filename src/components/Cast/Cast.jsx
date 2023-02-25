@@ -11,7 +11,7 @@ export default function Cast({ cast }) {
 
 }
 
-Cast.propType = {
-  movie: PropTypes.array.isRequired,
+Cast.propTypes = {
+  cast: PropTypes.array.isRequired,
 };
 

@@ -3,7 +3,8 @@ import { useParams, Outlet } from 'react-router-dom';
 
 import { getMovieDetails } from 'services/api';
 import MovieDetailsItem from 'components/MovieDetailsItem/MovieDetailsItem';
-import css from './MovieDetails.module.css'
+import { GoBackButton } from 'components/GoBackButton';
+
 
 export default function MovieDetails() {  
   const { movieId } = useParams();
@@ -26,6 +27,7 @@ export default function MovieDetails() {
   return (
     <>
       <section>
+        <GoBackButton />
         {movie && <MovieDetailsItem movie={movie} />}
       </section>
       <Outlet />

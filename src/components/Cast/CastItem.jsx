@@ -17,6 +17,6 @@ export default function CastItem({ actor }) {
 
 }
 
-CastItem.propType = {
+CastItem.propTypes = {
   actor: PropTypes.object.isRequired,
 };

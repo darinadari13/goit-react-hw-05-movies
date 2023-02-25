@@ -38,6 +38,6 @@ export default function MoviesDetailsItem({movie}) {
 };
 
 
-MoviesDetailsItem.propType = {
+MoviesDetailsItem.propTypes = {
   movie: PropTypes.object.isRequired,
 };
