@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import css from './MovieDetailsItem.module.css';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import img from '../../img/image-not-available.png';
 
 export default function MoviesDetailsItem({movie}) {
-  const {poster_path, title, release_date, vote_average, overview, genres, id} = movie;
+  const location = useLocation();
+
+  const from = location.state?.from ?? '/';
+
+  const {poster_path, title, release_date, vote_average, overview, genres} = movie;
   const movieGenres = genres.map(genre => genre.name).join(', ');
 
-  const url_cast = `/movies/${id}/cast`;
-  const url_reviews = `/movies/${id}/reviews`;
 
   return (
     <div>
@@ -15,7 +18,7 @@ export default function MoviesDetailsItem({movie}) {
       <div className={css.flexContainer}>
         <img
           className={css.poster}
-          src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+          src={poster_path ? `https://image.tmdb.org/t/p/w300${poster_path}` : img }
           alt={title}
         />
         <div className={css.description}>
@@ -30,8 +33,8 @@ export default function MoviesDetailsItem({movie}) {
       </div>
       <span>Additional information</span>
       <ul>
-          <li><Link to={url_cast}>Cast</Link></li>
-          <li><Link to={url_reviews}>Reviews</Link></li>
+          <li><Link to={'cast'} state={{from}}>Cast</Link></li>
+          <li><Link to={'reviews'} state={{from}}>Reviews</Link></li>
       </ul>
     </div>
   )
